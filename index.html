@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/all.min.css">
+
+    <title>Kemensos RI</title>
+</head>
+<body>
+       <nav class="container mx-auto px-4 py-5">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-5">
+                <div class="flex flex-wrap items-center justify-between text-sm">
+                <a href="index.html"><img src="./images/kemensos.png" class="h-16 "></a>  
+                <button onclick="toggleNavbar()" class="md:hidden block bg-gray-50 focus:ring-2 focus:ring-gray-200 p-4 text-grey-600 rounded-lg"><i class="fa-solid fa-bars"></i></button>
+                <div id="navbar" class="hidden mt-5 md:mt-0 md:block md:w-auto w-full">
+                    <ul class="p-3 rounded-lg flex rounded-lg bg-white md:bg-transparent md:space-x-8 border md:border-none flex-col md:flex-row">
+                        <li class="px-4 py-2 md:p-0 font-bold md:text-cyan-600 md:bg-transparent bg-sky-500 text-white rounded-lg">Beranda</li>
+                        <li class="px-4 py-2 md:p-0">Profil</li>
+                        <li class="px-4 py-2 md:p-0">Jadwal</li>
+                        <li class="px-4 py-2 md:p-0">Infografis</li>
+                        <li class="px-4 py-2 md:p-0">Layanan Publik</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="auth" class="hidden md:block bg-white rounded-lg border py-2 px-4 text-sm">
+                <a href="index.html" class="text-sky-700 py-2 px-4"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+            </div>
+        </div>
+       </nav> 
+
+<header class="container mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row items-center gap-5">
+        <div class="w-full md:w-3/5 space-y-5">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800">Kementrian<br>Sosial <span class="text-sky-600">Republik<br>Indonesia</span></h1>
+            <p class="text-base md:text-xl font-light text-gray-600">Sebuah lembaga pemerintahan di indonesia yang bertanggung jawab atas urusan sosial dan kesejahteraan rakyat.</p>
+            <div class="w-4/5 flex flex-row flex-wrap">
+                <div class="w-1/2 flex gap-2 text-gray-700 mb-3 px-1">
+                    <span class="text-emerald-700"><i class="fa-solid fa-check"></i></span>
+                    <p class="text-sm"><span class="font-bold">Humanis</span><br>Selalu menggunakan pendekatan humanis ketika bekerja.</p>
+                </div>
+                <div class="w-1/2 flex gap-2 text-gray-700 mb-3 px-1">
+                    <span class="text-emerald-700"><i class="fa-solid fa-check"></i></span>
+                    <p class="text-sm"><span class="font-bold">Adaftif</span><br>Program kerja dirancang agar mudah beradaptasi di segala kondisi.</p>
+                </div>
+                <div class="w-1/2 flex gap-2 text-gray-700 mb-3 px-1">
+                    <span class="text-emerald-700"><i class="fa-solid fa-check"></i></span>
+                    <p class="text-sm"><span class="font-bold">Dedikatif</span><br>SDM Kemensos senantiasa bekerja penuh dedikasi, tidak sekedar business as usual.</p>
+                </div>
+                <div class="w-1/2 flex gap-2 text-gray-700 mb-3 px-1">
+                    <span class="text-emerald-700"><i class="fa-solid fa-check"></i></span>
+                    <p class="text-sm"><span class="font-bold">Inklusif</span><br>Dalam bekerja selalu dalam konsep melibatkan semua stakeholders.</p>
+                </div>
+                <div class="w-1/2 flex gap-2 text-gray-700 mb-3 px-1">
+                    <span class="text-emerald-700"><i class="fa-solid fa-check"></i></span>
+                    <p class="text-sm"><span class="font-bold">Responsif</span><br>Seluruh Program dan SDM dalam bekerja harus memiliki sense of urgency yang tinggi berupaya untuk bisa responsif.</p>
+                </div>
+            </div>
+        </div>
+            <div class="w-full md:w-2/5 bg--white shadow-xl md:border-none border border-gray-100 rounded-xl p-5 text-center transition ease-in-out md:hover:scale-105">
+                <h4 class="font-bold text-grey-800 mb-3">Cek Status Bantuan Sosial disini</h4>
+                <div class="my-4" id="result"></div>
+
+                <div class="flex flex-col items-center gap-3">
+                    <label class="text-gray-600 text-sm">Nomor Induk Kependudukan</label>
+                    <input id="nik" type="text" class="w-full md:w-3/4 py-2 bg-gray-50 border border-gray-200 text-gray-800 rounded-lg text-sm" placeholder="Isi nomor induk kependudukan disini...">
+                    <button onclick="cariPenerima()" class="w-full md:w-3/4 bg-emerald-500 hover:bg-emerald-600 text-white text-sm px-5 py-2 rounded-lg"><i class="fa-solid fa-magnifying-glass"></i>Cari Sekarang</button>
+                    <div class="w-full md:w-3/4 flex justify-center gap-2 text-xs text-gray-500 mt-2">
+                        <div>
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <p class="text-left">Website ini hanya digunakan untuk praktek mata kuliah Front End Development di Politeknik LP3I Kampus Tasikmalaya tahun 2023. Oleh <a href="#" class="font-bold">Tugas_FaizalHamdani</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
+<section role="banner" class="bg-gray-50 py-10">
+    <div class="container mx-auto px-4">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="https://kemensos.go.id/uploads/banners/16632269321948.jpg" class="rounded-2xl">
+        </div>
+        <div class="item">
+          <img src="https://kemensos.go.id/uploads/banners/16722903031406.png" class="rounded-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+       <script src="./js/all.min.js"> </script>
+       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+       <script>
+        const toggleNavbar=()=> {
+            $('#navbar').toggle();
+            $('#auth').toggle();
+        }
+       </script>
+</body> 
+</html>
